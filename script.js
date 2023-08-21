@@ -15,9 +15,6 @@ buyButtons.forEach(button => {
 
 // newsletter
 
-
-// script.js
-
 const modal = document.getElementById("newsletterModal");
 const closeButton = document.querySelector(".close");
 const emailForm = document.getElementById("emailForm");
