@@ -6,9 +6,9 @@
     <title>NovaTech</title>
     <link rel="stylesheet" href="styles.css">
     <head>
-        <!-- ... other meta tags and title ... -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     
 </head>
@@ -22,7 +22,25 @@
             <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
         </ul>
     </nav>
+    <div class="content-wrapper">
+        <div id="newsletterModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="images/pc2.avif" alt="Newsletter Image">
+                <h1>Subscribe today!</h1>
+                <p>Keep up to date with our newest deals!</p>
+                <form id="emailForm">
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        
     <header>
+        <div class="title">
+            <h1>NovaTech</h1>
+            <p>Your Ultimate Destination for High-Performance PC's</p>
+        </div>
         <main>
             <section class="pc img">
                 <img src="images/pc1.jpg" alt="PC Model 1">
@@ -39,10 +57,7 @@
             <!-- Add more PC sections here -->
         </main>  
     </header>
-    <!-- Rest of your content goes here -->
-    <footer>
-        <p>&copy; 2023 NovaTech</p>
-    </footer>
+</div>
     <script src="script.js"></script>
 </body>
 </html>

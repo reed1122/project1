@@ -6,9 +6,9 @@
     <title>NovaTech</title>
     <link rel="stylesheet" href="styles.css">
     <head>
-        <!-- ... other meta tags and title ... -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     
 </head>
@@ -24,7 +24,6 @@
     </nav>
     <header>
         <main>
-       <!-- Inside the main element -->
 <div class="description-container">
   
     <h2>Frequently Asked Questions</h2>
@@ -37,18 +36,46 @@
     <p><strong>Q: Can I use Can You Run It on mobile devices?</strong></p>
     <p>A: Currently, the service is designed for desktop and laptop computers.</p>
     
-    <!-- Add more FAQ questions and answers as needed -->
-    
-    <p>Still having issues? <a href="mailto:support@example.com">Contact us</a> at support@example.com.</p>
-</div>
-
-            <!-- Add more PC sections here -->
+    <!-- Add more FAQ questions -->
+    <div class="contact-form">
+        <h2>Contact Customer Support</h2>
+        <form id="contactForm">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required>
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="question">Questions or Comments:</label>
+          <textarea id="question" name="question" rows="4"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+        <div id="thank-you" class="thank-you">
+          </div>
+      </div>
+  </div>
         </main>  
     </header>
-    <!-- Rest of your content goes here -->
-    <footer>
-        <p>&copy; 2023 NovaTech</p>
-    </footer>
-    <script src="script.js"></script>
+    <script>
+        // Function to handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+    
+            // Display a confirmation message
+            const isConfirmed = confirm("Thank you for submitting your message! We will get back to you soon.");
+            
+            if (isConfirmed) {
+                // Automatically submit the form
+                document.getElementById("contactForm").submit();
+                
+                // Show the "thank you" message
+                document.getElementById("thank-you").style.display = "block";
+            }
+        }
+    
+        // Add event listener to the form's submit button
+        const contactForm = document.getElementById("contactForm");
+        contactForm.addEventListener("submit", handleFormSubmit);
+    </script>
 </body>
 </html>

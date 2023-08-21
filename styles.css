@@ -1,8 +1,39 @@
 /* styles.css */
+@media (max-width: 768px) {
+    /* Styles for screens smaller than 768px */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        position: static;
+        background-color: #222;
+    }
+
+    .navbar.open .navbar-menu {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+
+    .navbar-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
 body {
-    background: url('images/galaxy-background.jpg') no-repeat center center fixed;
+    background: url('images/nova1.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -59,12 +90,18 @@ footer {
 
 /* Navigation bar styles */
 .navbar {
-    background-color: #222;
-    display: flex;
-    justify-content: center; /* Horizontally center the menu */
-    align-items: center; /* Vertically center the menu */
-    padding: 10px 20px;
-}
+        background-color: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0; /* Place it at the top */
+        width: 100%;
+        z-index: 100; /* Ensure the navbar appears above other content */
+    }
+    
+
 
 .navbar-menu {
     list-style: none;
@@ -126,7 +163,7 @@ nav a:hover {
   }
   
   .flex-container > div {
-    background-color: #f1f1f1;
+    background-color: transparent;
     margin: 10px;
     padding: 20px;
     font-size: 30px;
@@ -152,3 +189,152 @@ nav a:hover {
     background-color: transparent;
 }
 
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #0c0c0c;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-content img {
+    max-width: 100%; /* Make sure the image doesn't exceed the width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    margin-bottom: 10px; /* Add some spacing below the image */
+}
+
+.title {
+    text-align: center;
+    padding: 50px 0;
+    color: #fff;
+}
+
+.title h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.title p {
+    font-size: 1.2rem;
+}
+
+
+
+.product {
+    width: calc(33.33% - 20px);
+    background-color: transparent; /* Transparent black background */
+    color: white; /* Text color */
+    margin: 10px;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.product img {
+    max-width: 50%;
+    height: 50%;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+.product h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.product p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/*product*/
+
+@media (max-width: 768px) {
+    .flex-container {
+      flex-direction: column; /* Stack products vertically */
+    }
+  
+    .product {
+      width: 100%; /* Full width */
+      margin: 10px 0; /* Add spacing between products */
+    }
+  }
+  
+  /*contact form*/
+
+  /* Add this to your existing styles.css file */
+/* Update the existing CSS for the contact form */
+.contact-form {
+    background-color: grey;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    max-width: 400px; /* Set a maximum width for the form box */
+    margin: 0 auto; /* Center the form box horizontally */
+  }
+  
+  .contact-form h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+  }
+  
+  .contact-form button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #2980b9;
+  }
+  
+  .small-image {
+    max-width: 500px; /* Adjust the value as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
