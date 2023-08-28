@@ -1,4 +1,4 @@
-// script.js
+
 const buyButtons = document.querySelectorAll(".buy-button");
 
 function handleBuyClick() {
